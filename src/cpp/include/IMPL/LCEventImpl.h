@@ -66,6 +66,7 @@ namespace IMPL{
     virtual const std::vector<std::string>  * getCollectionNames() const;
     
     /** Returns the collection for the given name.
+     * Throws an exception if the collection is not in the event.
      *
      * @throws DataNotAvailableException
      */
@@ -77,6 +78,8 @@ namespace IMPL{
      *  after the call returns.<br>
      *  This is usefull when you want to keep the collection for the next events.<br>
      *  Use with care!
+     * Throws an exception if the collection is not in the event.
+     * 
      * @throws DataNotAvailableException
      */
 
