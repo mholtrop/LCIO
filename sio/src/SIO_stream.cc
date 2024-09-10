@@ -325,8 +325,8 @@ printf(  "    -ASCII----------\n");
 // Scan down the buffer, printing a dump record every 16 bytes.
 //
 memset(  &outbuf[ 0], ' ', sizeof( outbuf ) );
-sprintf( &outbuf[ 1], "%8d",  offset );
-sprintf( &outbuf[10], "%p",  (void*) dmpbeg );
+snprintf( &outbuf[ 1], sizeof(&outbuf[1]) ,"%8d",  offset );
+snprintf( &outbuf[10], sizeof(&outbuf[10]),"%p",  (void*) dmpbeg );
 outbuf[ 9] = ':';
 outbuf[18] = ' ';
 outbuf[76] = '\0';
@@ -353,8 +353,8 @@ while( dmpbeg < dmpend )
         printf( "%s\n", outbuf );
 
         memset(  &outbuf[ 0], ' ', sizeof( outbuf ) );
-        sprintf( &outbuf[ 1], "%8d",  offset );
-        sprintf( &outbuf[10], "%p",  (void*) dmpbeg );
+        snprintf( &outbuf[ 1], sizeof(&outbuf[1]) , "%8d",  offset );
+        snprintf( &outbuf[10], sizeof(&outbuf[10]), "%p",  (void*) dmpbeg );
         outbuf[ 9] = ':';
         outbuf[18] = ' ';
         outbuf[76] = '\0';
