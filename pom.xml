@@ -25,7 +25,7 @@
         </snapshotRepository>
     </distributionManagement>
     <repositories>
-        <repository>
+       <!-- <repository>
             <id>lcsim-maven</id>
             <name>org.lcsim Maven Repository</name>
             <url>https://lcsim.org/maven2</url>
@@ -34,7 +34,7 @@
                 <updatePolicy>always</updatePolicy>
                 <checksumPolicy>ignore</checksumPolicy>
             </snapshots>
-        </repository>
+        </repository>-->
         <repository>
             <id>freehep-maven</id>
             <name>FreeHEP Maven 2 Repository</name>
@@ -82,8 +82,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

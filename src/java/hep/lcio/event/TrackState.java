@@ -44,7 +44,11 @@ public interface TrackState extends LCObject {
      * @see getReferencePoint
      */
     public float getTanLambda();
-
+    /**  Blocal is the b-field at the reference point
+     *
+     */
+    public float getBLocal();
+    
     /** Covariance matrix of the track parameters. Stored as lower triangle matrix where
      * the order of parameters is:   d0, phi, omega, z0, tan(lambda).
      * So we have cov(d0,d0), cov( phi, d0 ), cov( phi, phi), ...
@@ -55,20 +59,20 @@ public interface TrackState extends LCObject {
      *  of the first/last hits or the entry point into the calorimeter.
      */
     public float[] getReferencePoint();
-
-    public final static int AtOther = 0;
-
- // any location other than the ones defined below  
-    public final static int AtIP = 1;
-
-    public final static int AtFirstHit = 2;
-
-    public final static int AtLastHit = 3;
-
-    public final static int AtCalorimeter = 4;
-
-    public final static int AtVertex = 5;
-
+  /** 3-momentum at the perigee or the reference point
+   *
+     */
+    public float[] getMomentum(); 
+    // any location other than the ones defined below  
+    public final static int AtOther = 0;  // Any location other than the ones defined below. 
+    
+    public final static int AtPerigee = 1;  //track state at perigee, which is what the track finder returns
+    public final static int AtIP = 2;  // this is at the target
+    public final static int AtTarget = 2;  // this is at the target
+    public final static int AtFirstHit = 3;
+    public final static int AtLastHit = 4;
+    public final static int AtCalorimeter = 5;
+    public final static int AtVertex = 6;
     public final static int LastLocation = AtVertex;
 } // class or interface
 
